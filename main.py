@@ -94,87 +94,89 @@ def get_issues(config_data: dict) -> list:
         while True:
             for issue in response.json().get('items', []):
                 # print(f"Processing: {json.dumps(issue, indent=2)}")
+                try:
+                    html_issue_url = issue["html_url"]
+                    if html_issue_url in processed_html_issues_url_set:
+                        print(f"{html_issue_url} DISCARDED -> already processed")
+                        continue
+                    processed_html_issues_url_set.add(html_issue_url)
 
-                html_issue_url = issue["html_url"]
-                if html_issue_url in processed_html_issues_url_set:
-                    print(f"{html_issue_url} DISCARDED -> already processed")
-                    continue
-                processed_html_issues_url_set.add(html_issue_url)
+                    # check if this issue has to be skipped
+                    if html_issue_url in config_data.get("excluded_issues_url_lst", []):
+                        print(f"{html_issue_url} DISCARDED -> present in exclusion list")
+                        continue
 
-                # check if this issue has to be skipped
-                if html_issue_url in config_data.get("excluded_issues_url_lst", []):
-                    print(f"{html_issue_url} DISCARDED -> present in exclusion list")
-                    continue
+                    # check labels
+                    issue_labels = issue["labels"]
+                    labels_to_match_lst = config_data.get("issue_labels", [])
+                    if len(issue_labels) > 0 and len(labels_to_match_lst) > 0 \
+                            and not any(
+                        any(
+                            label_to_match.lower() in label["name"].lower()
+                            for label_to_match in labels_to_match_lst
+                        )
+                        for label in issue_labels
+                    ):
+                        print(f"{html_issue_url} DISCARDED -> contains irrelevant labels")
+                        continue
 
-                # check labels
-                issue_labels = issue["labels"]
-                labels_to_match_lst = config_data.get("issue_labels", [])
-                if len(issue_labels) > 0 and len(labels_to_match_lst) > 0 \
-                        and not any(
-                                    any(
-                                        label_to_match.lower() in label["name"].lower()
-                                        for label_to_match in labels_to_match_lst
-                                    )
-                                    for label in issue_labels
-                                ):
-                    print(f"{html_issue_url} DISCARDED -> contains irrelevant labels")
-                    continue
+                    # get issue's title and body
+                    issue_content = issue["title"]
+                    if issue["body"]:
+                        issue_content += " " + issue["body"]
 
-                # get issue's title and body
-                issue_content = issue["title"]
-                if issue["body"]:
-                    issue_content += " " + issue["body"]
+                    # get issue's comments
+                    comments_url = issue["comments_url"]
+                    comments_obj_lst = requests.get(comments_url, auth=GITHUB_CREDENTIALS).json()
+                    for comment_obj in comments_obj_lst:
+                        if comment_obj["body"]:
+                            issue_content += " " + comment_obj["body"]
 
-                # get issue's comments
-                comments_url = issue["comments_url"]
-                comments_obj_lst = requests.get(comments_url, auth=GITHUB_CREDENTIALS).json()
-                for comment_obj in comments_obj_lst:
-                    if comment_obj["body"]:
-                        issue_content += " " + comment_obj["body"]
+                    # search for keywords for exclusion in the issue's content
+                    keywords_exclusion_lst = config_data.get("keywords_exclusion_lst", [])
+                    if len(keywords_exclusion_lst) > 0 and any(
+                            keyword.lower() in issue_content.lower() for keyword in keywords_exclusion_lst):
+                        print(
+                            f"{html_issue_url} DISCARDED -> issue content contains keyword from keywords_exclusion_lst")
+                        continue
 
-                # search for keywords for exclusion in the issue's content
-                keywords_exclusion_lst = config_data.get("keywords_exclusion_lst", [])
-                if len(keywords_exclusion_lst) > 0 and any(
-                        keyword.lower() in issue_content.lower() for keyword in keywords_exclusion_lst):
-                    print(f"{html_issue_url} DISCARDED -> issue content contains keyword from keywords_exclusion_lst")
-                    continue
+                    # get issue's source repo
+                    repo_url = issue["repository_url"]
+                    src_repo_obj = requests.get(repo_url, auth=GITHUB_CREDENTIALS).json()
+                    repo_updated_at = src_repo_obj["updated_at"].split("T")[0]
+                    if repo_updated_at < config_data.get("min_repo_update_date", ""):
+                        print(f"{html_issue_url} DISCARDED -> too old, updated: {repo_updated_at}")
+                        continue
 
-                # get issue's source repo
-                repo_url = issue["repository_url"]
-                src_repo_obj = requests.get(repo_url, auth=GITHUB_CREDENTIALS).json()
-                repo_updated_at = src_repo_obj["updated_at"].split("T")[0]
-                if repo_updated_at < config_data.get("min_repo_update_date", ""):
-                    print(f"{html_issue_url} DISCARDED -> too old, updated: {repo_updated_at}")
-                    continue
+                    # min nr of stars
+                    repo_stars_count = src_repo_obj["stargazers_count"]
+                    if repo_stars_count < config_data.get("min_nr_stars", 0):
+                        print(f"{html_issue_url} DISCARDED -> small stars count: {repo_stars_count}")
+                        continue
 
-                # min nr of stars
-                repo_stars_count = src_repo_obj["stargazers_count"]
-                if repo_stars_count < config_data.get("min_nr_stars", 0):
-                    print(f"{html_issue_url} DISCARDED -> small stars count: {repo_stars_count}")
-                    continue
+                    # search for keywords in the repo's code
+                    code_search_keywords_lst = config_data.get("code_search_keywords_lst", [])
+                    if len(code_search_keywords_lst) > 0 and not are_keywords_in_code(code_search_keywords_lst, src_repo_obj["full_name"]):
+                        print(f"{html_issue_url} DISCARDED -> required keywords not found in the repo code")
+                        continue
 
-                # search for keywords in the repo's code
-                code_search_keywords_lst = config_data.get("code_search_keywords_lst", [])
-                if len(code_search_keywords_lst) > 0 and not are_keywords_in_code(code_search_keywords_lst,
-                                                                                  src_repo_obj["full_name"]):
-                    print(f"{html_issue_url} DISCARDED -> required keywords not found in the repo code")
-                    continue
+                    # create object
+                    github_repo_obj = GitHubIssueObj(
+                        issue["url"],
+                        html_issue_url,
+                        repo_url,
+                        src_repo_obj["stargazers_count"],
+                        src_repo_obj["open_issues_count"]
+                    )
+                    github_repo_obj_lst.append(github_repo_obj)
 
-                # create object
-                github_repo_obj = GitHubIssueObj(
-                    issue["url"],
-                    html_issue_url,
-                    repo_url,
-                    src_repo_obj["stargazers_count"],
-                    src_repo_obj["open_issues_count"]
-                )
-                github_repo_obj_lst.append(github_repo_obj)
+                    if len(github_repo_obj_lst) == config_data.get("get_total_count"):
+                        print(f"STOP -> reached total count")
+                        stop = True
+                        break
 
-                if len(github_repo_obj_lst) == config_data.get("get_total_count"):
-                    print(f"STOP -> reached total count")
-                    stop = True
-                    break
-
+                finally:
+                    print(issue)
             # go to next page with issues if exists
             if not response.links.get('next'):
                 break
