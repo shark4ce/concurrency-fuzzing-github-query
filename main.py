@@ -7,7 +7,9 @@ CODE_SEARCH_URL = "https://api.github.com/search/code"
 ISSUES_SEARCH_URL = "https://api.github.com/search/issues"
 REPO_SEARCH_URL = "https://api.github.com/search/repositories"
 
-GITHUB_CREDENTIALS = ("ti-monitor", "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")
+
+# TODO: set credentials
+# GITHUB_CREDENTIALS = ()
 
 
 class GitHubIssueObj:
@@ -158,7 +160,8 @@ def get_issues(config_data: dict) -> list:
 
                     # search for keywords in the repo's code
                     code_search_keywords_lst = config_data.get("code_search_keywords_lst", [])
-                    if len(code_search_keywords_lst) > 0 and not are_keywords_in_code(code_search_keywords_lst, src_repo_obj["full_name"]):
+                    if len(code_search_keywords_lst) > 0 and not are_keywords_in_code(code_search_keywords_lst,
+                                                                                      src_repo_obj["full_name"]):
                         print(f"{html_issue_url} DISCARDED -> required keywords not found in the repo code")
                         continue
 
