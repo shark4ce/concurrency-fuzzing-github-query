@@ -143,10 +143,12 @@ def get_issues(config_data: dict) -> list:
                     # get issue's source repo
                     repo_url = issue["repository_url"]
                     src_repo_obj = requests.get(repo_url, auth=GITHUB_CREDENTIALS).json()
-                    repo_updated_at = src_repo_obj["updated_at"].split("T")[0]
-                    if repo_updated_at < config_data.get("min_repo_update_date", ""):
-                        print(f"{html_issue_url} DISCARDED -> too old, updated: {repo_updated_at}")
-                        continue
+                    repo_updated_at = src_repo_obj.get("updated_at", None)
+                    if repo_updated_at:
+                        repo_updated_at = repo_updated_at.split("T")[0]
+                        if repo_updated_at < config_data.get("min_repo_update_date", ""):
+                            print(f"{html_issue_url} DISCARDED -> too old, updated: {repo_updated_at}")
+                            continue
 
                     # min nr of stars
                     repo_stars_count = src_repo_obj["stargazers_count"]
