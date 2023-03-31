@@ -1,0 +1,338 @@
+[
+  {
+    "html_issue_url": "https://github.com/redis/redis/issues/7372",
+    "raw_issue_url": "https://api.github.com/repos/redis/redis/issues/7372",
+    "repo_url": "https://api.github.com/repos/redis/redis",
+    "start_count": 59171,
+    "open_issues_count": 2336
+  },
+  {
+    "html_issue_url": "https://github.com/redis/redis/issues/4245",
+    "raw_issue_url": "https://api.github.com/repos/redis/redis/issues/4245",
+    "repo_url": "https://api.github.com/repos/redis/redis",
+    "start_count": 59171,
+    "open_issues_count": 2336
+  },
+  {
+    "html_issue_url": "https://github.com/debauchee/barrier/issues/435",
+    "raw_issue_url": "https://api.github.com/repos/debauchee/barrier/issues/435",
+    "repo_url": "https://api.github.com/repos/debauchee/barrier",
+    "start_count": 21884,
+    "open_issues_count": 943
+  },
+  {
+    "html_issue_url": "https://github.com/pqrs-org/Karabiner-Elements/issues/3351",
+    "raw_issue_url": "https://api.github.com/repos/pqrs-org/Karabiner-Elements/issues/3351",
+    "repo_url": "https://api.github.com/repos/pqrs-org/Karabiner-Elements",
+    "start_count": 16207,
+    "open_issues_count": 791
+  },
+  {
+    "html_issue_url": "https://github.com/keepassxreboot/keepassxc/issues/8194",
+    "raw_issue_url": "https://api.github.com/repos/keepassxreboot/keepassxc/issues/8194",
+    "repo_url": "https://api.github.com/repos/keepassxreboot/keepassxc",
+    "start_count": 15350,
+    "open_issues_count": 641
+  },
+  {
+    "html_issue_url": "https://github.com/keepassxreboot/keepassxc/issues/6739",
+    "raw_issue_url": "https://api.github.com/repos/keepassxreboot/keepassxc/issues/6739",
+    "repo_url": "https://api.github.com/repos/keepassxreboot/keepassxc",
+    "start_count": 15350,
+    "open_issues_count": 641
+  },
+  {
+    "html_issue_url": "https://github.com/apache/brpc/issues/859",
+    "raw_issue_url": "https://api.github.com/repos/apache/brpc/issues/859",
+    "repo_url": "https://api.github.com/repos/apache/brpc",
+    "start_count": 14720,
+    "open_issues_count": 402
+  },
+  {
+    "html_issue_url": "https://github.com/FreeCAD/FreeCAD/issues/7701",
+    "raw_issue_url": "https://api.github.com/repos/FreeCAD/FreeCAD/issues/7701",
+    "repo_url": "https://api.github.com/repos/FreeCAD/FreeCAD",
+    "start_count": 13620,
+    "open_issues_count": 915
+  },
+  {
+    "html_issue_url": "https://github.com/pybind/pybind11/issues/2197",
+    "raw_issue_url": "https://api.github.com/repos/pybind/pybind11/issues/2197",
+    "repo_url": "https://api.github.com/repos/pybind/pybind11",
+    "start_count": 12455,
+    "open_issues_count": 554
+  },
+  {
+    "html_issue_url": "https://github.com/systemd/systemd/issues/25875",
+    "raw_issue_url": "https://api.github.com/repos/systemd/systemd/issues/25875",
+    "repo_url": "https://api.github.com/repos/systemd/systemd",
+    "start_count": 10864,
+    "open_issues_count": 2128
+  },
+  {
+    "html_issue_url": "https://github.com/openzfs/zfs/issues/13419",
+    "raw_issue_url": "https://api.github.com/repos/openzfs/zfs/issues/13419",
+    "repo_url": "https://api.github.com/repos/openzfs/zfs",
+    "start_count": 8849,
+    "open_issues_count": 1064
+  },
+  {
+    "html_issue_url": "https://github.com/NixOS/nix/issues/6352",
+    "raw_issue_url": "https://api.github.com/repos/NixOS/nix/issues/6352",
+    "repo_url": "https://api.github.com/repos/NixOS/nix",
+    "start_count": 7807,
+    "open_issues_count": 2552
+  },
+  {
+    "html_issue_url": "https://github.com/NixOS/nix/issues/6353",
+    "raw_issue_url": "https://api.github.com/repos/NixOS/nix/issues/6353",
+    "repo_url": "https://api.github.com/repos/NixOS/nix",
+    "start_count": 7807,
+    "open_issues_count": 2552
+  },
+  {
+    "html_issue_url": "https://github.com/NixOS/nix/issues/5039",
+    "raw_issue_url": "https://api.github.com/repos/NixOS/nix/issues/5039",
+    "repo_url": "https://api.github.com/repos/NixOS/nix",
+    "start_count": 7807,
+    "open_issues_count": 2552
+  },
+  {
+    "html_issue_url": "https://github.com/apache/doris/issues/8143",
+    "raw_issue_url": "https://api.github.com/repos/apache/doris/issues/8143",
+    "repo_url": "https://api.github.com/repos/apache/doris",
+    "start_count": 7667,
+    "open_issues_count": 1520
+  },
+  {
+    "html_issue_url": "https://github.com/zephyrproject-rtos/zephyr/issues/52362",
+    "raw_issue_url": "https://api.github.com/repos/zephyrproject-rtos/zephyr/issues/52362",
+    "repo_url": "https://api.github.com/repos/zephyrproject-rtos/zephyr",
+    "start_count": 7493,
+    "open_issues_count": 2027
+  },
+  {
+    "html_issue_url": "https://github.com/zaphoyd/websocketpp/issues/905",
+    "raw_issue_url": "https://api.github.com/repos/zaphoyd/websocketpp/issues/905",
+    "repo_url": "https://api.github.com/repos/zaphoyd/websocketpp",
+    "start_count": 6088,
+    "open_issues_count": 412
+  },
+  {
+    "html_issue_url": "https://github.com/halide/Halide/issues/2758",
+    "raw_issue_url": "https://api.github.com/repos/halide/Halide/issues/2758",
+    "repo_url": "https://api.github.com/repos/halide/Halide",
+    "start_count": 5348,
+    "open_issues_count": 861
+  },
+  {
+    "html_issue_url": "https://github.com/Provenance-Emu/Provenance/issues/1922",
+    "raw_issue_url": "https://api.github.com/repos/Provenance-Emu/Provenance/issues/1922",
+    "repo_url": "https://api.github.com/repos/Provenance-Emu/Provenance",
+    "start_count": 5188,
+    "open_issues_count": 255
+  },
+  {
+    "html_issue_url": "https://github.com/AdAway/AdAway/issues/3170",
+    "raw_issue_url": "https://api.github.com/repos/AdAway/AdAway/issues/3170",
+    "repo_url": "https://api.github.com/repos/AdAway/AdAway",
+    "start_count": 5175,
+    "open_issues_count": 447
+  },
+  {
+    "html_issue_url": "https://github.com/raspberrypi/firmware/issues/1428",
+    "raw_issue_url": "https://api.github.com/repos/raspberrypi/firmware/issues/1428",
+    "repo_url": "https://api.github.com/repos/raspberrypi/firmware",
+    "start_count": 4774,
+    "open_issues_count": 369
+  },
+  {
+    "html_issue_url": "https://github.com/OpenTTD/OpenTTD/issues/10140",
+    "raw_issue_url": "https://api.github.com/repos/OpenTTD/OpenTTD/issues/10140",
+    "repo_url": "https://api.github.com/repos/OpenTTD/OpenTTD",
+    "start_count": 4717,
+    "open_issues_count": 300
+  },
+  {
+    "html_issue_url": "https://github.com/supercollider/supercollider/issues/3977",
+    "raw_issue_url": "https://api.github.com/repos/supercollider/supercollider/issues/3977",
+    "repo_url": "https://api.github.com/repos/supercollider/supercollider",
+    "start_count": 4682,
+    "open_issues_count": 790
+  },
+  {
+    "html_issue_url": "https://github.com/TelegramMessenger/Telegram-iOS/issues/982",
+    "raw_issue_url": "https://api.github.com/repos/TelegramMessenger/Telegram-iOS/issues/982",
+    "repo_url": "https://api.github.com/repos/TelegramMessenger/Telegram-iOS",
+    "start_count": 4339,
+    "open_issues_count": 391
+  },
+  {
+    "html_issue_url": "https://github.com/Mbed-TLS/mbedtls/issues/3263",
+    "raw_issue_url": "https://api.github.com/repos/Mbed-TLS/mbedtls/issues/3263",
+    "repo_url": "https://api.github.com/repos/Mbed-TLS/mbedtls",
+    "start_count": 4088,
+    "open_issues_count": 1226
+  },
+  {
+    "html_issue_url": "https://github.com/gluster/glusterfs/issues/3179",
+    "raw_issue_url": "https://api.github.com/repos/gluster/glusterfs/issues/3179",
+    "repo_url": "https://api.github.com/repos/gluster/glusterfs",
+    "start_count": 4028,
+    "open_issues_count": 233
+  },
+  {
+    "html_issue_url": "https://github.com/gluster/glusterfs/issues/3089",
+    "raw_issue_url": "https://api.github.com/repos/gluster/glusterfs/issues/3089",
+    "repo_url": "https://api.github.com/repos/gluster/glusterfs",
+    "start_count": 4028,
+    "open_issues_count": 233
+  },
+  {
+    "html_issue_url": "https://github.com/CGAL/cgal/issues/6141",
+    "raw_issue_url": "https://api.github.com/repos/CGAL/cgal/issues/6141",
+    "repo_url": "https://api.github.com/repos/CGAL/cgal",
+    "start_count": 3790,
+    "open_issues_count": 510
+  },
+  {
+    "html_issue_url": "https://github.com/boostorg/beast/issues/2416",
+    "raw_issue_url": "https://api.github.com/repos/boostorg/beast/issues/2416",
+    "repo_url": "https://api.github.com/repos/boostorg/beast",
+    "start_count": 3729,
+    "open_issues_count": 168
+  },
+  {
+    "html_issue_url": "https://github.com/unbit/uwsgi/issues/1990",
+    "raw_issue_url": "https://api.github.com/repos/unbit/uwsgi/issues/1990",
+    "repo_url": "https://api.github.com/repos/unbit/uwsgi",
+    "start_count": 3268,
+    "open_issues_count": 831
+  },
+  {
+    "html_issue_url": "https://github.com/vcmi/vcmi/issues/1592",
+    "raw_issue_url": "https://api.github.com/repos/vcmi/vcmi/issues/1592",
+    "repo_url": "https://api.github.com/repos/vcmi/vcmi",
+    "start_count": 3087,
+    "open_issues_count": 252
+  },
+  {
+    "html_issue_url": "https://github.com/microsoft/service-fabric/issues/566",
+    "raw_issue_url": "https://api.github.com/repos/microsoft/service-fabric/issues/566",
+    "repo_url": "https://api.github.com/repos/microsoft/service-fabric",
+    "start_count": 2959,
+    "open_issues_count": 810
+  },
+  {
+    "html_issue_url": "https://github.com/nginx/unit/issues/738",
+    "raw_issue_url": "https://api.github.com/repos/nginx/unit/issues/738",
+    "repo_url": "https://api.github.com/repos/nginx/unit",
+    "start_count": 2838,
+    "open_issues_count": 181
+  },
+  {
+    "html_issue_url": "https://github.com/microsoft/DirectXShaderCompiler/issues/4792",
+    "raw_issue_url": "https://api.github.com/repos/microsoft/DirectXShaderCompiler/issues/4792",
+    "repo_url": "https://api.github.com/repos/microsoft/DirectXShaderCompiler",
+    "start_count": 2522,
+    "open_issues_count": 545
+  },
+  {
+    "html_issue_url": "https://github.com/MailCore/mailcore2/issues/1917",
+    "raw_issue_url": "https://api.github.com/repos/MailCore/mailcore2/issues/1917",
+    "repo_url": "https://api.github.com/repos/MailCore/mailcore2",
+    "start_count": 2487,
+    "open_issues_count": 198
+  },
+  {
+    "html_issue_url": "https://github.com/newsboat/newsboat/issues/1739",
+    "raw_issue_url": "https://api.github.com/repos/newsboat/newsboat/issues/1739",
+    "repo_url": "https://api.github.com/repos/newsboat/newsboat",
+    "start_count": 2395,
+    "open_issues_count": 333
+  },
+  {
+    "html_issue_url": "https://github.com/mapbox/tippecanoe/issues/805",
+    "raw_issue_url": "https://api.github.com/repos/mapbox/tippecanoe/issues/805",
+    "repo_url": "https://api.github.com/repos/mapbox/tippecanoe",
+    "start_count": 2303,
+    "open_issues_count": 202
+  },
+  {
+    "html_issue_url": "https://github.com/toggl-open-source/toggldesktop/issues/4118",
+    "raw_issue_url": "https://api.github.com/repos/toggl-open-source/toggldesktop/issues/4118",
+    "repo_url": "https://api.github.com/repos/toggl-open-source/toggldesktop",
+    "start_count": 1791,
+    "open_issues_count": 593
+  },
+  {
+    "html_issue_url": "https://github.com/WayfireWM/wayfire/issues/1741",
+    "raw_issue_url": "https://api.github.com/repos/WayfireWM/wayfire/issues/1741",
+    "repo_url": "https://api.github.com/repos/WayfireWM/wayfire",
+    "start_count": 1747,
+    "open_issues_count": 322
+  },
+  {
+    "html_issue_url": "https://github.com/apple/cups/issues/6075",
+    "raw_issue_url": "https://api.github.com/repos/apple/cups/issues/6075",
+    "repo_url": "https://api.github.com/repos/apple/cups",
+    "start_count": 1661,
+    "open_issues_count": 96
+  },
+  {
+    "html_issue_url": "https://github.com/azure-rtos/threadx/issues/219",
+    "raw_issue_url": "https://api.github.com/repos/azure-rtos/threadx/issues/219",
+    "repo_url": "https://api.github.com/repos/azure-rtos/threadx",
+    "start_count": 1622,
+    "open_issues_count": 18
+  },
+  {
+    "html_issue_url": "https://github.com/RetroShare/RetroShare/issues/1996",
+    "raw_issue_url": "https://api.github.com/repos/RetroShare/RetroShare/issues/1996",
+    "repo_url": "https://api.github.com/repos/RetroShare/RetroShare",
+    "start_count": 1530,
+    "open_issues_count": 456
+  },
+  {
+    "html_issue_url": "https://github.com/synfig/synfig/issues/2452",
+    "raw_issue_url": "https://api.github.com/repos/synfig/synfig/issues/2452",
+    "repo_url": "https://api.github.com/repos/synfig/synfig",
+    "start_count": 1462,
+    "open_issues_count": 552
+  },
+  {
+    "html_issue_url": "https://github.com/Nheko-Reborn/nheko/issues/1318",
+    "raw_issue_url": "https://api.github.com/repos/Nheko-Reborn/nheko/issues/1318",
+    "repo_url": "https://api.github.com/repos/Nheko-Reborn/nheko",
+    "start_count": 1454,
+    "open_issues_count": 270
+  },
+  {
+    "html_issue_url": "https://github.com/laverdet/isolated-vm/issues/202",
+    "raw_issue_url": "https://api.github.com/repos/laverdet/isolated-vm/issues/202",
+    "repo_url": "https://api.github.com/repos/laverdet/isolated-vm",
+    "start_count": 1428,
+    "open_issues_count": 44
+  },
+  {
+    "html_issue_url": "https://github.com/contour-terminal/contour/issues/1062",
+    "raw_issue_url": "https://api.github.com/repos/contour-terminal/contour/issues/1062",
+    "repo_url": "https://api.github.com/repos/contour-terminal/contour",
+    "start_count": 1180,
+    "open_issues_count": 206
+  },
+  {
+    "html_issue_url": "https://github.com/multitheftauto/mtasa-blue/issues/2795",
+    "raw_issue_url": "https://api.github.com/repos/multitheftauto/mtasa-blue/issues/2795",
+    "repo_url": "https://api.github.com/repos/multitheftauto/mtasa-blue",
+    "start_count": 1100,
+    "open_issues_count": 903
+  },
+  {
+    "html_issue_url": "https://github.com/raspberrypi/rpi-imager/issues/551",
+    "raw_issue_url": "https://api.github.com/repos/raspberrypi/rpi-imager/issues/551",
+    "repo_url": "https://api.github.com/repos/raspberrypi/rpi-imager",
+    "start_count": 1087,
+    "open_issues_count": 199
+  }
+]
