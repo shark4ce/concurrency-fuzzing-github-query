@@ -7,9 +7,8 @@ CODE_SEARCH_URL = "https://api.github.com/search/code"
 ISSUES_SEARCH_URL = "https://api.github.com/search/issues"
 REPO_SEARCH_URL = "https://api.github.com/search/repositories"
 
-
-# TODO: set credentials
-# GITHUB_CREDENTIALS = ()
+# TODO: set git credentials
+# GITHUB_CREDENTIALS = ("git_username", "token")
 
 
 class GitHubIssueObj:
@@ -81,8 +80,9 @@ def get_issues(config_data: dict) -> list:
 
         # check params again, especially for '(' and ')'
         params = {
-            'q': "{issue_keywords_str} is:issue is:closed {languages_str} created:>={min_creation_date}".format(
+            'q': "{issue_keywords_str} is:issue is:{issue_status} {languages_str} created:>={min_creation_date}".format(
                 issue_keywords_str=issue_keywords_str,
+                issue_status=config_data.get("issue_status", "open"),
                 languages_str=config_data.get("languages_str"),
                 min_creation_date=config_data.get("min_creation_date")),
             "per_page": "100"
@@ -181,19 +181,18 @@ def get_issues(config_data: dict) -> list:
                         break
 
                 finally:
-                    print(issue)
+                    pass
+                    # print(issue)
             # go to next page with issues if exists
-            if not response.links.get('next'):
+            if stop or not response.links.get('next') or 'url' in response.links.get('next'):
                 break
-            response = requests.get(response.links.get('next')["url"])
 
-        if stop:
-            break
+            response = requests.get(response.links.get('next')["url"])
 
     if len(github_repo_obj_lst) > 0:
         github_repo_obj_lst.sort(key=lambda x: x.get_nr_stars(), reverse=True)
 
-    return github_repo_obj_lst
+    return github_repo_obj_lst[:config_data.get("get_top_count")]
 
 
 # Press the green button in the gutter to run the script.
@@ -203,16 +202,20 @@ if __name__ == '__main__':
         exit("Missing arguments.\nUsage: python main.py [output_file_name]")
 
     config_data = {
-        "get_top_count": 1,
-        "get_total_count": 100,
+        "get_top_count": 50,
+        "get_total_count": 50,
         "min_nr_stars": 1000,
         "min_creation_date": "2017-01-01",
         "min_repo_update_date": "2022-09-01",
         "languages_str": "language:c language:c++",
+        "issue_status": "closed",
         "issue_labels": [
             "bug",
             "race",
+            "race-condition",
             "concurrency",
+            "deadlock",
+            "dead-lock",
         ],
         "search_keywords": [
             "race",
@@ -244,7 +247,7 @@ if __name__ == '__main__':
             "display"
         ],
         "code_search_keywords_lst": [
-            "pThread",
+            "pthread",
             "openmp"
         ],
         "excluded_issues_url_lst": [
